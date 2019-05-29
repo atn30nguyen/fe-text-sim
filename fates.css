@@ -21,7 +21,7 @@
     height: 55px;
     left: 5px;
     top: -55px;
-    background: lightgreen;
+
     
 }
 
@@ -29,8 +29,8 @@
     position: relative;
     width: 360px;
     height: 40px;
-    left: 33px;
-    top: 6px;
+    left: 0px;
+    top: 0px;
 }
 
-p { font-family: 'fot-chiaro_stdb'; }
+p { font-family: 'fot-chiaro_stdb', Arial, sans-serif; }
