@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'fot-chiaro_stdb';
+    src: url('fot-chiarostd-b-webfont.woff2') format('woff2'),
+    url('fot-chiarostd-b-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#background{
+    position: relative;
+    width: 400px;
+    height: 240px;
+    left: 50px;
+    top: 75px;
+}
+
+#text_box{
+    position: relative;
+    width: 390px;
+    height: 55px;
+    left: 5px;
+    top: -55px;
+    background: lightgreen;
+    
+}
+
+#text{
+    position: relative;
+    width: 360px;
+    height: 40px;
+    left: 33px;
+    top: 6px;
+}
+
+p { font-family: 'fot-chiaro_stdb'; }
