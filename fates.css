@@ -17,7 +17,7 @@
 
 #name_tag{
     position:relative;
-    bottom: 57px;
+    bottom: 302px;
     left:2px;
 }
 
@@ -34,7 +34,27 @@
     width: 360px;
     height: 40px;
     left: 0px;
-    top: 0px;
+    bottom: 245px;
 }
 
 p { font-family: 'fot-chiaro_stdb', Arial, sans-serif; }
+
+#imagePreview {
+    position:relative;
+    width: 180px;
+    height: 240px;
+    bottom: 185px;
+    background-position: center center;
+    background-size: cover;
+    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .8);
+    display: inline-block;
+    content: "click Here";
+    color: black;
+  }
+  #imagePreview img{
+    width: 100%;  
+  }
+  
+  input[type="file"] {
+    display: none;
+  }

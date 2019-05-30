@@ -32,7 +32,7 @@
 
 
 
-    
+
     <nav class="pl-md-5 navbar navbar-expand-md bg-light navbar-light fixed-top">
         <a class="navbar-brand" href="https://atn30nguyen.github.io/fe-text-sim/">Fire Emblem Text Simulator</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
@@ -50,6 +50,26 @@
 
     </nav>
 
+    <script>
+        $(function () {
+            $("#uploadFile").on("change", function () {
+                var files = !!this.files ? this.files : [];
+                if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+
+                if (/^image/.test(files[0].type)) { // only image file
+                    var reader = new FileReader(); // instance of the FileReader
+                    reader.readAsDataURL(files[0]); // read the local file
+
+                    reader.onloadend = function () { // set image data as background of div
+                        $("#imagePreview").css("background-image", "url(" + this.result + ")");
+                    }
+                }
+            });
+            $('#imagePreview').click(function () {
+                $('#uploadFile').trigger('click');
+            });
+        });
+    </script>
 
 
     <div id="background">
@@ -57,7 +77,13 @@
         <img src="Fates Background.png">
 
         <div id="text_box">
+
+            <div id="imagePreview"></div>
+            <input id="uploadFile" type="file" name="image" class="img" />
             
+
+
+
             <div id="text">
                 <div contenteditable="true"
                     style="line-height:1.2;height:60px;width:390px;padding-left:10%;padding-right:10%;padding-top:2.5%;font-size:12;background:url('Birthright_Text.png');background-position:center center;background-repeat:no-repeat">
@@ -73,14 +99,14 @@
 
             </div>
             <div id="name_tag">
-                    <div contenteditable="true"
-                    style="width:114px;font-size:12;background:url('Fates Name Tag.png');background-position:center center;background-repeat:no-repeat;color:white;text-align:center"
-                    >Name</div>
+                <div contenteditable="true"
+                    style="width:114px;font-size:12;background:url('Fates Name Tag.png');background-position:center center;background-repeat:no-repeat;color:white;text-align:center">
+                    Name</div>
+            </div>
+
         </div>
 
-    </div>
 
-  
 
 
 </body>
