@@ -46,7 +46,7 @@ p { font-family: 'fot-chiaro_stdb', Arial, sans-serif; }
     bottom: 185px;
     background-position: center center;
     background-size: cover;
-    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
     display: inline-block;
     content: "click Here";
     color: black;
