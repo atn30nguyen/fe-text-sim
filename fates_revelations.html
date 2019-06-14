@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Fire Emblem Text Simulator</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="fates.css" charset="utf-8">
+    </head>
+
+
+
+
+
+    <!-- Nav bar for the website, including a dropdown menu for different games if I decide to work on those -->
+    <nav class="pl-md-5 navbar navbar-expand-md bg-light navbar-light fixed-top">
+        <a class="navbar-brand" href="https://atn30nguyen.github.io/fe-text-sim/">Fire Emblem Text Simulator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="navbar-nav">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="#" id="navbardrop"
+                        data-toggle="dropdown">Simulation Type</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item"
+                            href=https://atn30nguyen.github.io/fe-text-sim/fates_revelations.html>Fire Emblem Fates:
+                            Revelations</a> <a class="dropdown-item" href="#">More Coming Eventually!</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+    </nav>
+
+    <!-- Script for the image upload box on the left -->
+    <script>
+        $(function () {
+            $("#uploadFile").on("change", function () {
+                var files = !!this.files ? this.files : [];
+                if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+
+                if (/^image/.test(files[0].type)) { // only image file
+                    var reader = new FileReader(); // instance of the FileReader
+                    reader.readAsDataURL(files[0]); // read the local file
+
+                    reader.onloadend = function () { // set image data as background of div
+                        $("#imagePreview").css("background-image", "url(" + this.result + ")");
+                    }
+                }
+            });
+            $('#imagePreview').click(function () {
+                $('#uploadFile').trigger('click');
+            });
+        });
+    </script>
+
+    <!-- Script for the image upload box on the right -->
+    <script>
+        $(function () {
+            $("#uploadFile2").on("change", function () {
+                var files = !!this.files ? this.files : [];
+                if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+
+                if (/^image/.test(files[0].type)) { // only image file
+                    var reader = new FileReader(); // instance of the FileReader
+                    reader.readAsDataURL(files[0]); // read the local file
+
+                    reader.onloadend = function () { // set image data as background of div
+                        $("#imagePreview2").css("background-image", "url(" + this.result + ")");
+                    }
+                }
+            });
+            $('#imagePreview2').click(function () {
+                $('#uploadFile2').trigger('click');
+            });
+        });
+    </script>
+
+
+    <!-- Code for everything that's going on in the text box area -->
+    <div id="background">
+
+        <!-- Image for the background -->
+        <img src="Fates Background.png">
+
+        <div id="text_box">
+
+            <!-- Sets up the boxes for the uploaded images -->
+            <div id="imagePreview"></div>
+            <input id="uploadFile" type="file" name="image" class="img" />
+            <div id="imagePreview2"></div>
+            <input id="uploadFile2" type="file" name="image" class="img" />
+
+            <!-- Editable text box -->
+            <div id="text">
+                <div contenteditable="true"
+                    style="line-height:1.2;height:60px;width:390px;padding-left:10%;padding-right:10%;padding-top:2.5%;font-size:12;background:url('Birthright_Text.png');background-position:center center;background-repeat:no-repeat"
+                    spellcheck="false">
+                    This text can be edited by the user.
+                </div>
+
+                <!-- Old code for text-box
+                <textarea name="comments" id="comments"
+                    style="line-height:1.2;height:60px;width:390px;padding-left:9%;padding-right:9%;padding-top:2%;font-size:12;background:url('Birthright_Text.png');background-position:center center;background-repeat:no-repeat;"
+                    >Insert Dialogue Here
+                a</textarea> -->
+            </div>
+
+            <!-- Editable name tag box -->
+            <div id="name_tag">
+                <div contenteditable="true"
+                    style="font-weight:bold;width:114px;font-size:12;background:url('Fates Name Tag.png');background-position:center center;background-repeat:no-repeat;color:white;text-align:center"
+                    spellcheck="false">
+                    Name</div>
+            </div>
+
+        </div>
+
+</body>
+
+</html>

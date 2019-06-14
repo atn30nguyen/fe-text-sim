@@ -1,10 +1,26 @@
-@font-face {
-    font-family: 'fot-chiaro_stdb';
-    src: url('fot-chiarostd-b-webfont.woff2') format('woff2'),
-    url('fot-chiarostd-b-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+h1{
+    font-size: 50px;
+    text-transform: uppercase;
+	background: linear-gradient(to right, #0a3b40 0%, #0ab0bf 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    font-style: italic;
+    font-weight: 2;
+}
 
+p.title{
+    font-size: 30px;    
+	background: linear-gradient(to right, #0a3b40 0%, #0ab0bf 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    font-style: italic;
+    font-weight: 2;
+}
+p{
+    font-size: 20px;    
+    color: #133840;
+    font-style: italic;
+    font-weight: 2;
 }
 
 #background{
@@ -46,15 +62,27 @@ p { font-family: 'fot-chiaro_stdb', Arial, sans-serif; }
     bottom: 185px;
     background-position: center center;
     background-size: cover;
-    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
     display: inline-block;
     content: "click Here";
     color: black;
-  }
-  #imagePreview img{
-    width: 100%;  
-  }
-  
-  input[type="file"] {
+}
+
+#imagePreview2 {
+    position:relative;
+    width: 180px;
+    height: 240px;
+    left: 27px;
+    bottom: 185px;
+    background-position: center center;
+    background-size: cover;
+    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
+    display: inline-block;
+    content: "click Here";
+    color: black;
+}
+
+input[type="file"] {
     display: none;
-  }
+}
+
